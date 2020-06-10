@@ -3,7 +3,7 @@ package com.yszln.advancedui.givelike.huashu
 import android.animation.TypeEvaluator
 import android.graphics.PointF
 
-/** Copyright (C), 汀沐科技
+/**
  * @fileName: BezierEvaluator
  * @author: huwei
  * @date: 2020/6/9 16:41

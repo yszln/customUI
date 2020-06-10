@@ -1,14 +1,17 @@
 package com.yszln.advancedui.ordershaft
 
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.Typeface
 import android.util.AttributeSet
-import android.widget.TextView
+import androidx.appcompat.widget.AppCompatTextView
 
 /**
  * 订单进度
  */
-class OrderShaftView : TextView {
+class OrderShaftView : AppCompatTextView {
 
     private var mList = ArrayList<OrderShaftBean>()
 

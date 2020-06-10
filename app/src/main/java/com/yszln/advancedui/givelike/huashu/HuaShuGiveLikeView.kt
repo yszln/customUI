@@ -17,7 +17,7 @@ import com.yszln.advancedui.R
 import java.util.*
 import kotlin.collections.ArrayList
 
-/** Copyright (C), 汀沐科技
+/**
  * @fileName: GiveLikeHeartView
  * @author: huwei
  * @date: 2020/6/9 16:22

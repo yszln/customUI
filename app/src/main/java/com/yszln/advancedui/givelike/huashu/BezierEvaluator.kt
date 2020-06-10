@@ -26,13 +26,13 @@ class BezierEvaluator : TypeEvaluator<PointF> {
         //计算横坐标
         currentPoint.x =
             point0.x * (1 - t) * (1 - t) * (1 - t) +
-                    3 * mPoint1.x * (1 - t) * (1 - t) +
+                    3 * mPoint1.x * t*(1 - t) * (1 - t) +
                     3 * mPoint2.x * t * t * (1 - t) +
                     point3.x * t * t * t;
         //计算纵坐标
         currentPoint.y =
             point0.y * (1 - t) * (1 - t) * (1 - t) +
-                    3 * mPoint1.y * (1 - t) * (1 - t) +
+                    3 * mPoint1.y * t* (1 - t) * (1 - t) +
                     3 * mPoint2.y * t * t * (1 - t) +
                     point3.y * t * t * t;
         return currentPoint;

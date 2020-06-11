@@ -7,4 +7,9 @@
     <color name="teel_700">#018786</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="gray5">#C6C6C6</color>
+    <color name="color_schedule_un_select">#A3DCB2</color>
+    <color name="color_schedule_select">#FF51AD7E</color>
+    <color name="colorAccent">#33825A</color>
+    <color name="cut_off_color">#E9EEF0</color><!--分割线颜色-->
 </resources>

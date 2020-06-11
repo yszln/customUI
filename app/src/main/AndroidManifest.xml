@@ -9,21 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AdvancedUIKt">
-        <!--微信雷达扫描效果-->
-        <activity android:name=".radarscanning.WXRadarScanningActivity">
+        <activity android:name="com.yszln.advancedui.view.particleball.BallViewActivity"></activity>
+        <activity android:name=".view.ordershaft.OrderShaftActivity"/>
+        <activity android:name=".main.MainActivity" /> <!-- 微信雷达扫描效果 -->
+        <activity android:name="com.yszln.advancedui.view.radarscanning.WXRadarScanningActivity" />
+        <activity android:name="com.yszln.advancedui.view.touch.ScrollViewActivity" /> <!-- 仿花束直播点赞效果 -->
+        <activity android:name="com.yszln.advancedui.view.givelike.GiveLikeActivity" /> <!-- 六圆旋转扩散聚合效果 -->
+        <activity android:name=".splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".touch.ScrollViewActivity"></activity>
-        <!--仿花束直播点赞效果-->
-        <activity android:name=".givelike.GiveLikeActivity">
-
-        </activity>
-        <!--六圆旋转扩散聚合效果-->
-        <activity android:name=".splash.SplashActivity"></activity>
     </application>
 
 </manifest>

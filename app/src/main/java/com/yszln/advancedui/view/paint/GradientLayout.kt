@@ -1,4 +1,4 @@
-package com.yszln.advancedui.paint
+package com.yszln.advancedui.view.paint
 
 import android.content.Context
 import android.graphics.*

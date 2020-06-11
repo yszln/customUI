@@ -1,4 +1,4 @@
-package com.yszln.advancedui.givelike.huashu
+package com.yszln.advancedui.view.givelike.huashu
 
 import android.animation.TypeEvaluator
 import android.graphics.PointF

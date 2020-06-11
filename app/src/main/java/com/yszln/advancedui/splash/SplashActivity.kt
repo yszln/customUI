@@ -1,15 +1,23 @@
 package com.yszln.advancedui.splash
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.yszln.advancedui.R
-import com.yszln.advancedui.ball.BallView
-import com.yszln.advancedui.splash.SplashView
+import com.yszln.advancedui.main.BaseActivity
+import com.yszln.advancedui.main.MainActivity
+import kotlinx.android.synthetic.main.activity_paint.*
 
-class SplashActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_paint)
-//        setContentView(SplashView(this))
+class SplashActivity : BaseActivity() {
+
+
+    override fun getLayoutId(): Int {
+        return R.layout.activity_paint
+    }
+
+    override fun initView() {
+        splashView.setOnAnimatorEndListener(object : SplashView.OnAnimatorEndListener {
+            override fun onEnd() {
+                finish()
+                gotoActivity(MainActivity::class.java)
+            }
+        })
     }
 }

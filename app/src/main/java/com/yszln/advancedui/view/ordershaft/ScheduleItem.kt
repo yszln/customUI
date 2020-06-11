@@ -1,6 +1,6 @@
-package com.yszln.advancedui.ordershaft
+package com.yszln.advancedui.view.ordershaft
 
-data class OrderShaftBean(val title: String) {
+data class ScheduleItem(val title: String) {
     var isSelect: Boolean=false
 
     constructor(title: String, isSelect: Boolean) : this(title){

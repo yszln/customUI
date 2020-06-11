@@ -1,4 +1,4 @@
-package com.yszln.advancedui.ball
+package com.yszln.advancedui.view.particleball
 
 import android.animation.ValueAnimator
 import android.content.Context
@@ -19,7 +19,7 @@ class BallView : View {
 
     var mPaint: Paint = Paint();
     lateinit var mBitmap: Bitmap;
-    var mBalls = ArrayList<Ball>()
+    var mBalls = ArrayList<BallBean>()
     val d = 3f;//粒子直径
     var mValueAnimator: ValueAnimator
 
@@ -40,7 +40,7 @@ class BallView : View {
 
         for (i in 0 until mBitmap.width/3) {
             for (j in 0 until mBitmap.height/3) {
-                val ball = Ball()
+                val ball = BallBean()
                 ball.color = mBitmap.getPixel(i*3, j*3)
                 ball.x = i * d + d / 2
                 ball.y = j * d + d / 2

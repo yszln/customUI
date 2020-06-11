@@ -52,7 +52,7 @@ class SplashView @JvmOverloads constructor(
     /**
      * 动画时长
      */
-    private val mRotateDuration = 2000L;
+    private val mRotateDuration = 500L;
 
     private var mColors: IntArray = IntArray(6);
 
@@ -63,6 +63,8 @@ class SplashView @JvmOverloads constructor(
 
     private var mPaint = Paint()
     private var mHolePaint = Paint()
+
+    private var onAnimatorEndListener:OnAnimatorEndListener?=null;
 
     init {
         mColors[0] = Color.CYAN;
@@ -116,8 +118,8 @@ class SplashView @JvmOverloads constructor(
     inner class RotateState : SplashState() {
         init {
             mValueAnimator = ValueAnimator.ofFloat(0f, (Math.PI * 2f).toFloat());
-            mValueAnimator.repeatCount = 2;
-            mValueAnimator.duration = mRotateDuration;
+//            mValueAnimator.repeatCount = 2;
+            mValueAnimator.duration = (mRotateDuration*1.5).toLong();
             mValueAnimator.interpolator = LinearInterpolator()
             mValueAnimator.addUpdateListener {
                 mCurrentRotateAngle = it.animatedValue as Float
@@ -173,12 +175,18 @@ class SplashView @JvmOverloads constructor(
 
         constructor() : super() {
             mValueAnimator = ValueAnimator.ofFloat(mCircleRadius, mDistance);
-            mValueAnimator.duration = mRotateDuration * 3;
+            mValueAnimator.duration = mRotateDuration * 2;
             mValueAnimator.interpolator = LinearInterpolator()
             mValueAnimator.addUpdateListener {
                 mCurrentHoleRadius = it.animatedValue as Float
                 invalidate()
             }
+            mValueAnimator.addListener(object :AnimatorListenerAdapter(){
+                override fun onAnimationEnd(animation: Animator?) {
+                    super.onAnimationEnd(animation)
+                    onAnimatorEndListener?.onEnd()
+                }
+            })
             mValueAnimator.start()
         }
 
@@ -209,6 +217,14 @@ class SplashView @JvmOverloads constructor(
             canvas.drawCircle(mX + offsetX, mY + offsetY, mCircleRadius, mPaint)
 
         }
+    }
+
+   interface OnAnimatorEndListener{
+       fun onEnd()
+   }
+
+    public fun setOnAnimatorEndListener(onAnimatorEndListener: OnAnimatorEndListener){
+        this.onAnimatorEndListener=onAnimatorEndListener;
     }
 
 

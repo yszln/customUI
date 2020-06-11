@@ -1,7 +1,7 @@
-package com.yszln.advancedui.ball
+package com.yszln.advancedui.view.particleball
 
 
-data class Ball(
+data class BallBean(
     var color: Int=0,//像素点的颜色值
     var x: Float=0f,//粒子圆心坐标x
     var y: Float=0f,//粒子圆心坐标y

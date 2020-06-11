@@ -1,18 +1,14 @@
-package com.yszln.advancedui.givelike.huashu
+package com.yszln.advancedui.view.givelike.huashu
 
 import android.animation.*
 import android.content.Context
 import android.graphics.PointF
 import android.util.AttributeSet
 import android.util.Log
-import android.view.Gravity
-import android.view.MotionEvent
-import android.view.View
 import android.view.ViewGroup
 import android.view.animation.*
 import android.widget.FrameLayout
 import android.widget.ImageView
-import android.widget.RelativeLayout
 import com.yszln.advancedui.R
 import java.util.*
 import kotlin.collections.ArrayList

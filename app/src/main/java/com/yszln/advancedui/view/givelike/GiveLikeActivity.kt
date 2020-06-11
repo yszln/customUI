@@ -1,4 +1,4 @@
-package com.yszln.advancedui.givelike
+package com.yszln.advancedui.view.givelike
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

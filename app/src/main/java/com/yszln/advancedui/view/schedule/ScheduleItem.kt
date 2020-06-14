@@ -1,4 +1,4 @@
-package com.yszln.advancedui.view.ordershaft
+package com.yszln.advancedui.view.schedule
 
 data class ScheduleItem(val title: String) {
     var isSelect: Boolean=false

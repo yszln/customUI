@@ -1,4 +1,4 @@
-package com.yszln.advancedui.view.ordershaft
+package com.yszln.advancedui.view.schedule
 
 import android.content.Context
 import android.graphics.Canvas

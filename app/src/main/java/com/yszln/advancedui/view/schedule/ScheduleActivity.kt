@@ -1,4 +1,4 @@
-package com.yszln.advancedui.view.ordershaft
+package com.yszln.advancedui.view.schedule
 
 import com.yszln.advancedui.R
 import com.yszln.advancedui.main.BaseActivity
@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.act_order_shaft.*
  * @description:
  * @history:
  */
-class OrderShaftActivity : BaseActivity() {
+class ScheduleActivity : BaseActivity() {
     override fun getLayoutId(): Int {
         return R.layout.act_order_shaft
     }

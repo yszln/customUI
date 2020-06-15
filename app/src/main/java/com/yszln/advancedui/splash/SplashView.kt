@@ -227,5 +227,10 @@ class SplashView @JvmOverloads constructor(
         this.onAnimatorEndListener=onAnimatorEndListener;
     }
 
+    override fun onDetachedFromWindow() {
+        mValueAnimator.cancel()
+        super.onDetachedFromWindow()
+    }
+
 
 }

@@ -19,7 +19,7 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initView() {
-        recyclerView.layoutManager = GridLayoutManager(this, 3)
+        recyclerView.layoutManager = GridLayoutManager(this, 4)
         recyclerView.adapter = mMainAdapter
         mMainAdapter.setOnItemClickListener(object : MainAdapter.OnItemClickListener {
             override fun onClick(position: Int, item: MainItemBean, holder: MainAdapter.VH) {

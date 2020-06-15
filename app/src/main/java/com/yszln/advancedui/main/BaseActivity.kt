@@ -1,7 +1,9 @@
 package com.yszln.advancedui.main
 
+import android.app.ActionBar
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
@@ -16,12 +18,34 @@ import com.yszln.advancedui.view.title.TitleBarView
  * @history:
  */
 abstract class BaseActivity : AppCompatActivity() {
+
+    /**
+     * 是否添加标题栏
+     */
+    var isAddTitle = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val content = window.decorView.findViewById<ViewGroup>(android.R.id.content)
-        content?.addView(TitleBarView(this))
-        setContentView(getLayoutId())
+        val resId = getLayoutId()
+        if (isAddTitle) {
+            val linearLayout = LinearLayout(this)
+            linearLayout.layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ActionBar.LayoutParams.MATCH_PARENT
+            )
+            linearLayout.orientation = LinearLayout.VERTICAL
+            linearLayout.addView(TitleBarView(this))
+            linearLayout.addView(LayoutInflater.from(this).inflate(resId, null, false))
+            setContentView(linearLayout)
+        } else {
+            setContentView(resId)
+        }
+
         initView()
+    }
+
+    protected fun closeTitle(){
+        isAddTitle=false
     }
 
     abstract fun getLayoutId(): Int

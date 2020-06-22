@@ -69,7 +69,7 @@ class WXRadarScanningView @JvmOverloads constructor(
 
     private var mRun = object : Runnable {
         override fun run() {
-            mRoteDegree += 5
+            mRoteDegree += 2
             mRoteMatrix.postRotate(mRoteDegree, mCenterX, mCenterY)
             postDelayed(this, 0)
             invalidate()
@@ -94,6 +94,7 @@ class WXRadarScanningView @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+        canvas.restore()
         //绘制圆
         drawCircle(canvas)
         canvas.save()
@@ -102,6 +103,7 @@ class WXRadarScanningView @JvmOverloads constructor(
         canvas.restore()
         //绘制中间的图片
         drawBitmap(canvas)
+        canvas.save()
     }
 
     private fun drawScan(canvas: Canvas) {

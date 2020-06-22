@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".view.radarscanning.WXRadarScanningActivity">
 
     <com.yszln.advancedui.view.radarscanning.WXRadarScanningView
         android:layout_width="match_parent"
+        android:transitionName="SceneTransition"
         android:layout_height="match_parent" />
 
 </FrameLayout>

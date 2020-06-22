@@ -1,5 +1,7 @@
 package com.yszln.advancedui.main
 
+import android.content.Intent
+import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.yszln.advancedui.R
 import com.yszln.advancedui.study.StudyActivity
@@ -44,7 +46,11 @@ class MainActivity : BaseActivity() {
 
             0 -> {
                 //雷达
-                gotoActivity(WXRadarScanningActivity::class.java)
+                val activityOptions =
+                    ActivityOptionsCompat.makeSceneTransitionAnimation(this, holder.imageView, "SceneTransition")
+                val intent = Intent(this, WXRadarScanningActivity::class.java)
+                startActivity(intent,activityOptions.toBundle())
+//                gotoActivity(WXRadarScanningActivity::class.java)
             }
             1 -> {
                 //粒子爆炸效果

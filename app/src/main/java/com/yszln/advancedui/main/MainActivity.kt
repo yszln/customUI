@@ -3,8 +3,10 @@ package com.yszln.advancedui.main
 import androidx.recyclerview.widget.GridLayoutManager
 import com.yszln.advancedui.R
 import com.yszln.advancedui.study.StudyActivity
+import com.yszln.advancedui.view.dashboard.DashboardViewActivity
 import com.yszln.advancedui.view.particleball.BallViewActivity
 import com.yszln.advancedui.view.givelike.GiveLikeActivity
+import com.yszln.advancedui.view.piechart.PiechartActivity
 import com.yszln.advancedui.view.schedule.ScheduleActivity
 import com.yszln.advancedui.view.radarscanning.WXRadarScanningActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -36,11 +38,13 @@ class MainActivity : BaseActivity() {
         mMainAdapter.addData(MainItemBean(1, "粒子爆炸效果", R.mipmap.ic_launcher))
         mMainAdapter.addData(MainItemBean(2, "仿花束直播点赞", R.mipmap.heart1))
         mMainAdapter.addData(MainItemBean(3, "横向进度时间轴", R.mipmap.circle))
-        mMainAdapter.addData(MainItemBean(4, "学习", R.mipmap.circle))
+        mMainAdapter.addData(MainItemBean(4, "仪表盘", R.mipmap.circle))
+        mMainAdapter.addData(MainItemBean(5, "饼状图", R.mipmap.circle))
+        mMainAdapter.addData(MainItemBean(666, "test", R.mipmap.circle))
     }
 
     private fun clickEvent(position: Int, item: MainItemBean, holder: MainAdapter.VH) {
-        when (position) {
+        when (item.type) {
 
             0 -> {
                 //雷达
@@ -59,6 +63,14 @@ class MainActivity : BaseActivity() {
                 gotoActivity(ScheduleActivity::class.java)
             }
             4 -> {
+                //仪表盘
+                gotoActivity(DashboardViewActivity::class.java)
+            }
+            5 -> {
+                //饼状图
+                gotoActivity(PiechartActivity::class.java)
+            }
+            666 -> {
                 gotoActivity(StudyActivity::class.java)
             }
 

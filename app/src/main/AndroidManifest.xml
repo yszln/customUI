@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AdvancedUIKt">
-        <activity android:name=".study.StudyActivity"></activity>
+        <activity android:name=".view.piechart.PiechartActivity"></activity>
+        <activity android:name=".view.dashboard.DashboardViewActivity" />
+        <activity android:name=".study.StudyActivity" />
         <activity android:name=".view.particleball.BallViewActivity" />
         <activity android:name=".view.schedule.ScheduleActivity" />
         <activity android:name=".main.MainActivity" /> <!-- 微信雷达扫描效果 -->

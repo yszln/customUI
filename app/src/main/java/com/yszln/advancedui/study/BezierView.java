@@ -55,9 +55,9 @@ public class BezierView extends View {
     private void init() {
         mControlPoints.clear();
         Random random = new Random();
-        for (int i = 0; i < 9; i++) {
-            int x = random.nextInt(800) + 200;
-            int y = random.nextInt(800) + 200;
+        for (int i = 0; i <15; i++) {
+            int x = random.nextInt(980) + 200;
+            int y = random.nextInt(1720) + 200;
             PointF pointF = new PointF(x, y);
             mControlPoints.add(pointF);
         }

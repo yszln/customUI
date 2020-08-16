@@ -9,6 +9,7 @@ class SplashActivity : BaseActivity() {
 
 
     override fun getLayoutId(): Int {
+        closeTitle()
         return R.layout.activity_paint
     }
 

@@ -1,5 +1,7 @@
 package com.yszln.advancedui.main
 
+import android.content.Intent
+import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.yszln.advancedui.R
 import com.yszln.advancedui.study.StudyActivity
@@ -21,7 +23,7 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initView() {
-        recyclerView.layoutManager = GridLayoutManager(this, 3)
+        recyclerView.layoutManager = GridLayoutManager(this, 4)
         recyclerView.adapter = mMainAdapter
         mMainAdapter.setOnItemClickListener(object : MainAdapter.OnItemClickListener {
             override fun onClick(position: Int, item: MainItemBean, holder: MainAdapter.VH) {
@@ -48,7 +50,11 @@ class MainActivity : BaseActivity() {
 
             0 -> {
                 //雷达
-                gotoActivity(WXRadarScanningActivity::class.java)
+                val activityOptions =
+                    ActivityOptionsCompat.makeSceneTransitionAnimation(this, holder.imageView, "SceneTransition")
+                val intent = Intent(this, WXRadarScanningActivity::class.java)
+                startActivity(intent,activityOptions.toBundle())
+//                gotoActivity(WXRadarScanningActivity::class.java)
             }
             1 -> {
                 //粒子爆炸效果

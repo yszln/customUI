@@ -12,4 +12,6 @@
     <color name="color_schedule_select">#FF51AD7E</color>
     <color name="colorAccent">#33825A</color>
     <color name="cut_off_color">#E9EEF0</color><!--分割线颜色-->
+
+    <color name="blueDoraemon">#00A0EA</color>
 </resources>

@@ -9,10 +9,12 @@ import com.yszln.advancedui.study.StudyActivity
 import com.yszln.advancedui.view.dashboard.DashboardViewActivity
 import com.yszln.advancedui.view.particleball.BallViewActivity
 import com.yszln.advancedui.view.givelike.GiveLikeActivity
+import com.yszln.advancedui.view.piechart.MaskView
 import com.yszln.advancedui.view.piechart.PiechartActivity
 import com.yszln.advancedui.view.progress.SprotsProgressView
 import com.yszln.advancedui.view.schedule.ScheduleActivity
 import com.yszln.advancedui.view.radarscanning.WXRadarScanningActivity
+import com.yszln.advancedui.view.special.DoraemonView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.reflect.KProperty1
 
@@ -47,6 +49,7 @@ class MainActivity : BaseActivity() {
         mMainAdapter.addData(MainItemBean(5, "饼状图", R.mipmap.circle))
         mMainAdapter.addData(MainItemBean(6, "饼状图", R.mipmap.circle))
         mMainAdapter.addData(MainItemBean(7, "环形进度条", R.mipmap.circle))
+        mMainAdapter.addData(MainItemBean(8, "环形进度条", R.mipmap.circle))
         mMainAdapter.addData(MainItemBean(666, "test", R.mipmap.circle))
     }
 
@@ -55,15 +58,7 @@ class MainActivity : BaseActivity() {
 
             0 -> {
                 //雷达
-                val activityOptions =
-                    ActivityOptionsCompat.makeSceneTransitionAnimation(
-                        this,
-                        holder.imageView,
-                        "SceneTransition"
-                    )
-                val intent = Intent(this, WXRadarScanningActivity::class.java)
-                startActivity(intent, activityOptions.toBundle())
-//                gotoActivity(WXRadarScanningActivity::class.java)
+                gotoActivity(WXRadarScanningActivity::class.java)
             }
             1 -> {
                 //粒子爆炸效果
@@ -86,10 +81,13 @@ class MainActivity : BaseActivity() {
                 gotoActivity(PiechartActivity::class.java)
             }
             6 -> {
-
+                seeView(MaskView::class.java)
             }
             7 -> {
                 seeView(SprotsProgressView::class.java)
+            }
+            8 -> {
+                seeView(DoraemonView::class.java)
             }
             666 -> {
                 gotoActivity(StudyActivity::class.java)

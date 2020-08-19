@@ -12,9 +12,10 @@
         <activity android:name=".view.piechart.PiechartActivity"></activity>
         <activity android:name=".view.dashboard.DashboardViewActivity" />
         <activity android:name=".study.StudyActivity" />
+        <activity android:name=".main.ViewActivity" />
         <activity android:name=".view.particleball.BallViewActivity" />
         <activity android:name=".view.schedule.ScheduleActivity" />
-        <activity android:name=".main.MainActivity" /> <!-- 微信雷达扫描效果 -->
+        <activity android:name=".main.MainActivity" android:launchMode="singleInstance" /> <!-- 微信雷达扫描效果 -->
         <activity android:name=".view.radarscanning.WXRadarScanningActivity" />
         <activity android:name=".view.touch.ScrollViewActivity" /> <!-- 仿花束直播点赞效果 -->
         <activity android:name=".view.givelike.GiveLikeActivity" /> <!-- 六圆旋转扩散聚合效果 -->

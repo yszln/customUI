@@ -6,10 +6,15 @@ import android.view.Gravity
 import android.view.View
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.yszln.advancedui.R
+import kotlinx.android.synthetic.main.activity_view.*
 
-class ViewActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+class ViewActivity : BaseActivity() {
+
+    override fun getLayoutId() = R.layout.activity_view
+
+    override fun initView() {
+        titleBarView?.mTitleTv?.text = intent?.getStringExtra("title")
         val stringExtra = intent.getStringExtra("clazz")
         val loadClass = Class.forName(stringExtra)
         val constructor = loadClass.getConstructor(Context::class.java)
@@ -18,10 +23,10 @@ class ViewActivity : AppCompatActivity() {
             FrameLayout.LayoutParams.MATCH_PARENT,
             FrameLayout.LayoutParams.MATCH_PARENT
         )
-        params.gravity = Gravity.CENTER
         newInstance.layoutParams = params
 
 
-        setContentView(newInstance)
+        rootLayout.addView(newInstance)
+
     }
 }

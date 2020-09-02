@@ -3,10 +3,13 @@ package com.yszln.advancedui.study
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.yszln.advancedui.R
+import com.yszln.advancedui.main.BaseActivity
 
-class StudyActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(BezierView(this))
+class StudyActivity : BaseActivity() {
+
+
+    override fun getLayoutId()=R.layout.activity_study
+
+    override fun initView() {
     }
 }

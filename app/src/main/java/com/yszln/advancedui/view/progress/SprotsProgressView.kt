@@ -70,6 +70,7 @@ class SprotsProgressView @JvmOverloads constructor(
         )
         //另一种获取基线,与文字无关的方式
         paint.getFontMetrics(fontMetrics)
+        setMeasuredDimension(measuredWidth,measuredWidth)
     }
 
     override fun onDraw(canvas: Canvas) {

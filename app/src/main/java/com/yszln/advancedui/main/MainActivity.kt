@@ -1,8 +1,6 @@
 package com.yszln.advancedui.main
 
 import android.content.Intent
-import android.view.View
-import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.yszln.advancedui.R
 import com.yszln.advancedui.study.StudyActivity
@@ -16,7 +14,6 @@ import com.yszln.advancedui.view.schedule.ScheduleActivity
 import com.yszln.advancedui.view.radarscanning.WXRadarScanningActivity
 import com.yszln.advancedui.view.special.DoraemonView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.reflect.KProperty1
 
 class MainActivity : BaseActivity() {
 
@@ -24,6 +21,7 @@ class MainActivity : BaseActivity() {
 
 
     override fun getLayoutId(): Int {
+        isAddTitle=false
         return R.layout.activity_main
     }
 
@@ -47,9 +45,9 @@ class MainActivity : BaseActivity() {
         mMainAdapter.addData(MainItemBean(3, "横向进度时间轴", R.mipmap.circle))
         mMainAdapter.addData(MainItemBean(4, "仪表盘", R.mipmap.circle))
         mMainAdapter.addData(MainItemBean(5, "饼状图", R.mipmap.circle))
-        mMainAdapter.addData(MainItemBean(6, "饼状图", R.mipmap.circle))
+        mMainAdapter.addData(MainItemBean(6, "椭圆遮罩图片", R.mipmap.circle))
         mMainAdapter.addData(MainItemBean(7, "环形进度条", R.mipmap.circle))
-        mMainAdapter.addData(MainItemBean(8, "环形进度条", R.mipmap.circle))
+        mMainAdapter.addData(MainItemBean(8, "Doraemon", R.mipmap.circle))
         mMainAdapter.addData(MainItemBean(666, "test", R.mipmap.circle))
     }
 
@@ -81,13 +79,13 @@ class MainActivity : BaseActivity() {
                 gotoActivity(PiechartActivity::class.java)
             }
             6 -> {
-                seeView(MaskView::class.java)
+                seeView(MaskView::class.java,item.name)
             }
             7 -> {
-                seeView(SprotsProgressView::class.java)
+                seeView(SprotsProgressView::class.java, item.name)
             }
             8 -> {
-                seeView(DoraemonView::class.java)
+                seeView(DoraemonView::class.java, item.name)
             }
             666 -> {
                 gotoActivity(StudyActivity::class.java)
@@ -96,9 +94,10 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    private fun seeView(clazz: Class<*>) {
+    private fun seeView(clazz: Class<*>, name: String) {
         val intent = Intent(this, ViewActivity::class.java)
         intent.putExtra("clazz",clazz.canonicalName)
+        intent.putExtra("title",name)
         startActivity(intent)
     }
 
